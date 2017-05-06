@@ -1,0 +1,123 @@
+<!----Kelly Ortiz Figueiredo -- 31560921---->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Quiz League of Legends</title>
+    <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="estilo.css">
+          <!------JQuery------->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+       $(document).ready(function(){
+        $('#botao').click(function( ){
+          $("html").css("background-image","url('img/fundo.jpg')");
+        });
+      });
+        
+      $(document).ready(function(){
+        $('#botao1').click(function( ){
+          $("html").css("background-image","url('img/silvir.jpg')");
+        });
+      });
+      $(document).ready(function(){
+        $('#botao2').click(function( ){
+          $("html").css("background-image","url('img/ashe.jpg')");
+        });
+      });
+       $(document).ready(function(){
+        $('#botao3').click(function( ){
+          $("html").css("background-image","url('img/draven.jpg')");
+        });
+      });
+  </script>
+
+      
+    </head>
+  <script type="text/javascript" language="javascript">
+    var inicio=confirm('Bem-Vindo ao Quiz');
+      if(inicio==false){
+          document.write(sair);
+      }
+    else{ 
+        window.alert('Começou o game! Clique em Ok abaixo para começar');
+
+    var certo = "<b style='color:green;'>Correto!</b>"; 
+    var errado = "<b style='color:red;'>Errado!</b>";
+    var o = new Array();
+    var acertos=0; 
+    var erros=0; 
+    var respostas = new Array(); 
+    var p = new Array();
+    var r = new Array();
+    var t=10;
+    p[1] = "Que ano foi criando o League of Legends? ";
+    r[1] = '2009';
+    p[2] = "Quem é a irmã de Jinx?";
+    r[2] = 'vi';
+    p[3] = 'Qual a skin PROJETO cita a seguinte frase: "Desistir não é inútil... É humano."?';
+    r[3] = 'ashe';
+    p[4] = "Qual foi o time Campeão mundial de 2015?";
+    r[4] = 'skt t1';
+    p[5] = "Qual dos campeões tem a habilidade de ficar Imortal?";
+    r[5] = 'tryndamere';
+    p[6] = "Qual a porcetagem da vida de Le Blanc que faz com que apareça seu clone?";
+    r[6] = '40';
+    p[7] = "Qual o verdadeiro nome de Lux?";
+    r[7] = 'luxanna';
+    p[8] = "Qual título você ganha quando você ou qualquer pessoa da partida mata 8 pessoas seguidas sem morrer?";
+    r[8] = 'legendario';
+    p[9] = 'Quem é o "The Might of Demacia"?';
+    r[9] = ' garen';
+    p[10] = "Killing Spree, _, implacável, dominando, invencível, Legendario. <br>Que título está faltando?";
+    r[10] = 'enfurencido';
+     for(var i=1;i<=t;i++){
+            o[i] = i;
+     }
+     for(var i=1;i<=10;i++)         
+     {
+      n=Math.round(t*(Math.random())); 
+      m=Math.round(t*(Math.random()));
+      if(m==0){m++;}
+      if(n==0){n++;}
+      var temp = o[n];
+      o[n]=o[m];
+      o[m]=temp;
+     } 
+    for(var i=1;i<=t;i++)
+    {
+      respostas[o[i]] = prompt(p[o[i]],"");
+       if(respostas[o[i]]==r[o[i]]){
+           respostas[o[i]]=certo;
+           acertos++;
+       }
+        else{
+            respostas[o[i]]=errado;
+            erros++;
+        }
+     }
+       document.write("<br><br>Resultado:<br><br>");
+    document.write("<ol>");
+    for(var i=1;i<=t;i++)
+    {
+    document.write("<li>"+respostas[o[i]]);}
+    document.write("</ol>");
+    document.write("<br>Total de acertos: "+acertos);
+    document.write("<br>Total de erros: "+erros);
+    document.write("<br><br><input type=button value='Respostas' class='botao' Onclick=javascript:if(document.getElementById('rp').style.display=='none'){document.getElementById('rp').style.display='block';}else{document.getElementById('rp').style.display='none';}>");
+    document.write("<br><div id='rp' class='rp' style='display:none;'><ol>");
+    for(var i=1;i<=t;i++){ 
+        document.write("<li>"+p[o[i]]+"<br>R:"+r[o[i]]);
+    }
+    document.write("</ol></div>");
+   }
+    </script>
+    <body>
+    <br>
+    <div id="html" style="display:block;"></div>
+    <button type="button" id="botao">Wallpaper LoL</button>
+    <button type="button" id="botao1">Wallpaper Silvir</button>
+    <button type="button" id="botao2">Wallpaper Ashe</button>
+    <button type="button" id="botao3">Wallpaper Draven</button>
+    </body>
+ </html>
